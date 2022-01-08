@@ -30,10 +30,7 @@ dependencies {
 }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "11"
-    }
+    targetCompatibility = "11"
 }
 
 tasks.withType<Test> {
@@ -41,7 +38,11 @@ tasks.withType<Test> {
 }
 
 tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
-    archiveFileName.set("${project.name}-${project.version}.jar")
+    archiveClassifier.set("")
+}
+
+tasks.build {
+    dependsOn("shadowJar")
 }
 
 tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {
