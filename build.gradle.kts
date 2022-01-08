@@ -12,7 +12,6 @@ plugins {
 
 group = "uno.d1s"
 version = "0.0.1-beta.0"
-java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
@@ -39,6 +38,10 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
+    archiveFileName.set("${project.name}-${project.version}.jar")
 }
 
 tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {
