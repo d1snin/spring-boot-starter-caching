@@ -37,14 +37,6 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
-tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
-    archiveClassifier.set("")
-}
-
-tasks.build {
-    dependsOn("shadowJar")
-}
-
 tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {
     enabled = false
 }
