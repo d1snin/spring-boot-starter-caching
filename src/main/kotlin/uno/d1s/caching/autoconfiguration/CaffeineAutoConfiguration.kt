@@ -19,7 +19,7 @@ class CaffeineAutoConfiguration {
     @ConditionalOnMissingBean
     fun caffeine(): Caffeine<Any, Any> = Caffeine.newBuilder()
         .weakKeys()
-        .expireAfterAccess(Duration.ofHours(5))
+        .expireAfterAccess(Duration.ofMinutes(30))
 
     @Bean
     @ConditionalOnMissingBean
