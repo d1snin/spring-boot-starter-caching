@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "uno.d1s"
-version = "1.0.2-stable.0"
+version = "1.0.3-stable.0"
 
 repositories {
     mavenCentral()
