@@ -1,4 +1,4 @@
 org.springframework.cache.annotation.EnableCaching=\
-  uno.d1s.caching.autoconfiguration.AspectJAutoProxyAutoConfiguration,\
-  uno.d1s.caching.autoconfiguration.AspectsAutoConfiguration,\
-  uno.d1s.caching.autoconfiguration.CaffeineAutoConfiguration
+  dev.d1s.caching.autoconfiguration.AspectJAutoProxyAutoConfiguration,\
+  dev.d1s.caching.autoconfiguration.AspectAutoConfiguration,\
+  dev.d1s.caching.autoconfiguration.CaffeineAutoConfiguration

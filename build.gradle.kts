@@ -9,22 +9,26 @@ plugins {
     kotlin("plugin.spring") version "1.6.10"
 }
 
-group = "uno.d1s"
-version = "1.0.3-stable.0"
+group = "dev.d1s"
+version = "1.1.0-stable.0"
 
 repositories {
     mavenCentral()
+    maven(url = "https://jitpack.io/")
 }
 
-extra["caffeineVersion"] = "3.0.5"
+val caffeineVersion: String by project
+val teabagsVersion: String by project
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-aop")
     implementation("org.springframework.boot:spring-boot-starter-cache")
-    implementation("com.github.ben-manes.caffeine:caffeine:${property("caffeineVersion")}")
+    implementation("com.github.ben-manes.caffeine:caffeine:$caffeineVersion")
+    implementation("dev.d1s.teabags:teabag-spring-logging:$teabagsVersion")
+    implementation("dev.d1s.teabags:teabag-stdlib:$teabagsVersion")
     implementation("org.springframework.boot:spring-boot-starter")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation(kotlin("reflect"))
+    implementation(kotlin("stdlib"))
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
@@ -58,4 +62,8 @@ publishing {
             from(components["java"])
         }
     }
+}
+
+kotlin {
+    explicitApiWarning()
 }
