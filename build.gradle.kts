@@ -27,7 +27,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-aop")
     implementation("org.springframework.boot:spring-boot-starter-cache")
     implementation("com.github.ben-manes.caffeine:caffeine:$caffeineVersion")
-    implementation("dev.d1s.teabags:teabag-spring-logging:$teabagsVersion")
+    implementation("dev.d1s.teabags:teabag-slf4j:$teabagsVersion")
     implementation("dev.d1s.teabags:teabag-stdlib:$teabagsVersion")
     implementation("org.springframework.boot:spring-boot-starter")
     implementation(kotlin("reflect"))
